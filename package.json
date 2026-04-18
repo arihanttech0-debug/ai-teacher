@@ -11,7 +11,6 @@
   "dependencies": {
     "@heyputer/puter.js": "^2.2.15",
     "next": "16.2.4",
-    "openai": "^6.34.0",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
