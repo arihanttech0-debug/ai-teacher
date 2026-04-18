@@ -759,9 +759,9 @@ Respond ONLY in JSON: {"summaries":{"topic_name":"5 line summary here.",...}}`;
                   </div>
                   {hasSummaries && <span style={{fontSize:9,color:C.green}}>●</span>}
                 </div>
-                {profile?.topicsExplored?.length > 0 && (
+                {(profile?.topicsExplored?.length ?? 0) > 0 && (
                   <div style={{marginTop:5,display:"flex",flexWrap:"wrap",gap:3}}>
-                    {profile.topicsExplored.slice(-3).map(t=><span key={t} style={{background:`${C.blue}15`,borderRadius:4,padding:"1px 5px",fontSize:9,color:C.blueLight}}>{t}</span>)}
+                    {profile?.topicsExplored?.slice(-3).map(t=><span key={t} style={{background:`${C.blue}15`,borderRadius:4,padding:"1px 5px",fontSize:9,color:C.blueLight}}>{t}</span>)}
                   </div>
                 )}
               </button>
@@ -889,12 +889,12 @@ Respond ONLY in JSON: {"summaries":{"topic_name":"5 line summary here.",...}}`;
                       <p style={{fontSize:16,fontWeight:600,color:"#e2e8f0",marginBottom:8}}>No Topic Summaries Yet</p>
                       <p style={{fontSize:14}}>
                         {selProfile?.topicsExplored?.length
-                          ? `${selProfile.topicsExplored.length} topic(s) explored. Click "Generate Topic Summaries".`
+                          ? `${selProfile?.topicsExplored?.length ?? 0} topic(s) explored. Click "Generate Topic Summaries".`
                           : "Student hasn't explored any topics yet."}
                       </p>
-                      {selProfile?.topicsExplored?.length > 0 && (
+                      {(selProfile?.topicsExplored?.length ?? 0) > 0 && (
                         <div style={{marginTop:16,display:"flex",flexWrap:"wrap",gap:6,justifyContent:"center"}}>
-                          {selProfile.topicsExplored.map(t=><span key={t} style={{background:`${C.blue}20`,borderRadius:20,padding:"4px 12px",fontSize:12,color:C.blueLight}}>{t}</span>)}
+                          {selProfile?.topicsExplored?.map(t=><span key={t} style={{background:`${C.blue}20`,borderRadius:20,padding:"4px 12px",fontSize:12,color:C.blueLight}}>{t}</span>)}
                         </div>
                       )}
                     </div>
