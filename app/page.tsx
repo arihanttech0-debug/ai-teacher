@@ -569,7 +569,7 @@ function PracticeModal({ questions, onClose, onSubmitAnswer, onGenerate, topic, 
                     style={{width:"100%",background:"#0a1020",border:`1px solid ${C.border}`,borderRadius:8,padding:"10px 12px",color:"#e2e8f0",fontSize:13,fontFamily:"'Outfit',sans-serif",resize:"vertical",outline:"none",boxSizing:"border-box"}}
                     onFocus={e=>e.target.style.borderColor=C.blue} onBlur={e=>e.target.style.borderColor=C.border}/>
                   <div style={{display:"flex",gap:8,marginTop:8}}>
-                    <input type="file" accept="image/*" ref={el=>fileRefs.current[q.id]=el} style={{display:"none"}} onChange={e=>e.target.files?.[0] && handleImg(q.id,e.target.files[0])}/>
+                    <input type="file" accept="image/*" ref={el=>{if(el) fileRefs.current[q.id]=el;}} style={{display:"none"}} onChange={e=>e.target.files?.[0] && handleImg(q.id,e.target.files[0])}/>
                     <button onClick={()=>fileRefs.current[q.id]?.click()}
                       style={{padding:"6px 12px",borderRadius:8,border:`1px solid ${C.border}`,background:C.card,color:images[q.id]?"#34d399":C.muted,fontSize:12,cursor:"pointer",fontFamily:"'Outfit',sans-serif"}}>
                       {images[q.id] ? "📷 Image ready" : "📷 Upload Answer"}
